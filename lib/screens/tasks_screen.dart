@@ -1,15 +1,10 @@
+import 'package:custom_todo_list_app/Components/new_task_data.dart';
 import 'package:custom_todo_list_app/custom_widgets/list_view.dart';
-import 'package:custom_todo_list_app/screens/bottomSheet_screen.dart';
+import 'package:custom_todo_list_app/screens/add_task_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class TasksScreen extends StatefulWidget {
-  const TasksScreen({Key? key}) : super(key: key);
-
-  @override
-  _TasksScreenState createState() => _TasksScreenState();
-}
-
-class _TasksScreenState extends State<TasksScreen> {
+class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -63,7 +58,7 @@ class _TasksScreenState extends State<TasksScreen> {
                           fontWeight: FontWeight.w700),
                     ),
                     Text(
-                      '12 Tasks',
+                      '${Provider.of<NewTaskData>(context).tasks.length} Tasks',
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     )
                   ],

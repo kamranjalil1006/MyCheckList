@@ -1,34 +1,30 @@
+import 'package:custom_todo_list_app/Components/new_task_data.dart';
 import 'package:custom_todo_list_app/custom_widgets/list_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:custom_todo_list_app/Components/task.dart';
+import 'package:provider/provider.dart';
 
-class MyCustomListView extends StatefulWidget {
-  @override
-  _MyCustomListViewState createState() => _MyCustomListViewState();
-}
-
-class _MyCustomListViewState extends State<MyCustomListView> {
-  List<Task> tasks = [
-    Task(name: 'This is a Task'),
-    Task(name: 'This is a Task'),
-    Task(name: 'This is a Task')
-  ];
-
+class MyCustomListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: (context, index) {
-        return MyCustomListTile(
-          taskName: tasks[index].name,
-          isChecked: tasks[index].isDone,
-          boxCheckToggle: (checkBoxState) {
-            setState(() {
-              tasks[index].boxCheckerStateChanger();
-            });
+    return Consumer<NewTaskData>(
+      builder: (context, newTaskData, child) {
+        return ListView.builder(
+          itemBuilder: (context, index) {
+            final task = newTaskData.tasks[index];
+            return MyCustomListTile(
+              isChecked: task.isDone,
+              taskName: task.name,
+              boxCheckToggle: (value) {
+                newTaskData.taskUpdate(task);
+              },
+              onLongPress: () {
+                newTaskData.deleteTask(task);
+              },
+            );
           },
+          itemCount: newTaskData.tasks.length,
         );
       },
-      itemCount: tasks.length,
     );
   }
 }

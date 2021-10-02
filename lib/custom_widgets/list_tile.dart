@@ -4,10 +4,13 @@ class MyCustomListTile extends StatelessWidget {
   final bool isChecked;
   final String taskName;
   final Function boxCheckToggle;
+  final Function onLongPress;
+
   MyCustomListTile(
       {required this.isChecked,
       required this.taskName,
-      required this.boxCheckToggle});
+      required this.boxCheckToggle,
+      required this.onLongPress});
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +26,9 @@ class MyCustomListTile extends StatelessWidget {
           boxCheckToggle(value);
         },
       ),
+      onLongPress: () {
+        onLongPress();
+      },
     );
   }
 }
