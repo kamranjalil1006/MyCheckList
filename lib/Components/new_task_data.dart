@@ -3,11 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:custom_todo_list_app/Components/task.dart';
 
 class NewTaskData extends ChangeNotifier {
-  List<Task> _tasks = [
-    Task(name: 'This is a Task'),
-    Task(name: 'This is a Task'),
-    Task(name: 'This is a Task')
-  ];
+  List<Task> _tasks = [];
 
   UnmodifiableListView<Task> get tasks {
     return UnmodifiableListView(_tasks);
@@ -24,7 +20,7 @@ class NewTaskData extends ChangeNotifier {
   }
 
   void taskUpdate(Task currentTask) {
-    currentTask.boxCheckerStateChanger();
+    currentTask.togglingCheckStateMethod();
     notifyListeners();
   }
 

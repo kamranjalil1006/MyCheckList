@@ -1,16 +1,10 @@
-# custom_todo_list_app
+# MyCheckList
 
-This app is designed by Kamran Jalil for the everyday basic tasks to remember.
+Hello Everyone!
+My name is Kamran Jalil and I have developed this app for keeping track of our daily-life tasks.
+This App was built using the Flutter framework and 'Dart' programming language,and developed inside
+our all time Favourite IDE 'Android Studio'.
+For State Management, I have used the Flutter's Favourite 'Provider' Package.
+I Hope it helps you in managing your daily tasks.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+P.S: I personally use it for managing my daily tasks!

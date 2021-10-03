@@ -25,6 +25,7 @@ class MyCustomListTile extends StatelessWidget {
         onChanged: (value) {
           boxCheckToggle(value);
         },
+        activeColor: Colors.purpleAccent,
       ),
       onLongPress: () {
         onLongPress();

@@ -25,7 +25,7 @@ class BottomSheetBuilder extends StatelessWidget {
               Text(
                 'Add Task',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 40, color: Colors.lightBlueAccent),
+                style: TextStyle(fontSize: 40, color: Colors.purple),
               ),
               TextField(
                 autofocus: true,
@@ -43,9 +43,10 @@ class BottomSheetBuilder extends StatelessWidget {
               ),
               TextButton(
                 style: TextButton.styleFrom(
-                  backgroundColor: Colors.lightBlueAccent,
+                  backgroundColor: Colors.purple,
                 ),
                 onPressed: () {
+                  // upon pressing the 'Add', application will call the addNewTask method located inside the resource class(NewTaskData) that we allocated to the Provider Widget and Pop the bottomSheet
                   Provider.of<NewTaskData>(context, listen: false)
                       .addNewTask(newTaskTitle);
                   Navigator.pop(context);

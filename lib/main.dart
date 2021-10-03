@@ -11,7 +11,8 @@ class CustomToDoList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<NewTaskData>(
-      create: (context) => NewTaskData(),
+      // provider is used for allocating a resource to be easily accessible every where in the app
+      create: (context) => NewTaskData(), // The resource is initialized here
       child: MaterialApp(
         home: TasksScreen(),
       ),
